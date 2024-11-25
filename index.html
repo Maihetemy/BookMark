@@ -22,11 +22,55 @@
         href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
         rel="stylesheet">
 
+    <!-- ---------------font-awesome---------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-
-
+    <div class="bookMarker d-flex flex-wrap justify-content-center m-5 p-2 ">
+        <p class="title mb-5">Bookmarker</p>
+        <div class="dottedLine"></div>
+        <p class="subTitle my-4"><i class="fa-solid fa-bookmark "></i> Bookmark your favorite sites <i
+                class="fa-solid fa-bookmark"></i></p>
+        <div class="w-100 mb-5">
+            <div class="mb-3">
+                <label for="siteNameInput" class="form-label fw-bold"><i class="fa-solid fa-folder me-2"></i> Site
+                    Name</label>
+                <input type="email" class="form-control" id="siteNameInput" aria-describedby="emailHelp"
+                    placeholder="Bookmark Name">
+            </div>
+            <div class="mb-3">
+                <label for="siteURLInput" class="form-label fw-bold"><i class="fa-solid fa-link me-2"></i> Site
+                    URL</label>
+                <input type="text" class="form-control" id="siteURLInput" placeholder="Website URL">
+            </div>
+            <button type="submit" class="btn btn-primary submit-btn px-5" id="siteSubmitBtn" onclick="addSite();">Submit</button>
+        </div>
+        <div class="dottedLine"></div>
+        <div class="container bg-white my-5 links-table">
+            <div class="row py-2">
+                <div class="col-3 text-center">
+                    <p class="text-capitalize fw-bold ">index</p>
+                    <p>1</p>
+                </div>
+                <div class="col-3 text-center">
+                    <p class="text-capitalize fw-bold ">Website Name</p>
+                    <p>Mai</p>
+                </div>
+                <div class="col-3 text-center">
+                    <p class="text-capitalize fw-bold ">Visit</p>
+                    <button class="bg-warning border-0 py-2 px-3 text-white rounded-2"><i class="fa-solid fa-eye"></i> Visit</button>
+                </div>
+                <div class="col-3 text-center">
+                    <p class="text-capitalize fw-bold ">Delete</p>
+                    <button class="bg-danger border-0 py-2 px-3 text-white rounded-2"><i class="fa-solid fa-trash-can"></i>
+                        Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="js/main.js"></script>
 </body>
 

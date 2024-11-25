@@ -1,0 +1,82 @@
+/* general */
+body {
+    min-height: 100vh;
+    background-color: #F7ECDE !important;
+
+}
+
+:root {
+    --main-color: rgb(53, 46, 40);
+    --righteous: "Righteous", serif;
+    --pacifico: "Pacifico", serif;
+    --pT-sans-caption: "PT Sans Caption", serif;
+}
+
+
+::selection {
+    background-color: #FEC260;
+}
+
+
+/* dotted line */
+.dottedLine {
+    width: 80%;
+    border-bottom: dotted rgb(83, 83, 83) 2px;
+}
+
+.title {
+    font-size: 50px;
+    font-family: var(--pacifico);
+    line-height: 60px;
+    color: var(--main-color);
+    font-weight: 500;
+    position: relative;
+}
+
+.title::before {
+    content: '';
+    width: 100%;
+    height: 50%;
+    background-color: #FEC260;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    transition: .5s all;
+}
+
+.title:hover::before {
+    height: 100%;
+}
+
+.subTitle {
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 30px;
+    font-family: var(--righteous);
+    background: rgb(63, 165, 91);
+    background: linear-gradient(90deg, rgba(63, 165, 91, 1) 52%, rgba(254, 194, 96, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.form-control:focus {
+    border-color: rgb(254, 194, 96) !important;
+    box-shadow: 2px 2px 8px rgba(254, 194, 96, 0.6) !important;
+
+}
+
+.submit-btn{
+    background-color: #CC4D2A !important;
+    border: none !important;
+    transition: 1s all;
+
+}
+.submit-btn:hover{
+    background-color: #8f381f !important;
+}
+
+.links-table p{
+margin: 0;
+}
