@@ -6,17 +6,21 @@ var siteNameInput = document.getElementById('siteNameInput');
 var siteURLInput = document.getElementById('siteURLInput');
 var siteSubmitBtn = document.getElementById('siteSubmitBtn');
 var sitesList = [];
-sitesList = JSON.parse(localStorage.getItem('site'));
+
+if( JSON.parse(localStorage.getItem('sites')) ){
+    sitesList = JSON.parse(localStorage.getItem('sites'));
+    displaySites();
+}
 
 // add function
 function addSite(){
     var siteObj = {
-        id : Date.now,
+        siteId : Date.now,
         siteName : siteNameInput.value,
         siteURL : siteURLInput.value,
     }
     sitesList.push(siteObj);
-    localStorage.setItem('site', JSON.stringify(sitesList));
+    localStorage.setItem('sites', JSON.stringify(sitesList));
     console.log(sitesList);
     displaySites();
     clearSite();
