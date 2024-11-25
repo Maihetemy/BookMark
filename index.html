@@ -46,28 +46,46 @@
                     URL</label>
                 <input type="text" class="form-control" id="siteURLInput" placeholder="Website URL">
             </div>
-            <button type="submit" class="btn btn-primary submit-btn px-5" id="siteSubmitBtn" onclick="addSite();">Submit</button>
+            <button type="submit" class="btn btn-primary submit-btn px-5" id="siteSubmitBtn"
+                onclick="addSite();">Submit</button>
         </div>
         <div class="dottedLine"></div>
-        <div class="container bg-white my-5 links-table">
-            <div class="row py-2">
-                <div class="col-3 text-center">
+        <div class="container bg-white my-5">
+            <div class="row py-2" id="links-table">
+                <!-- table head -->
+                <div class="col-3 text-center mb-2">
                     <p class="text-capitalize fw-bold ">index</p>
+                </div>
+                <div class="col-3 text-center mb-2">
+                    <p class="text-capitalize fw-bold ">Website Name</p>
+                </div>
+                <div class="col-3 text-center mb-2">
+                    <p class="text-capitalize fw-bold ">Visit</p>
+                </div>
+                <div class="col-3 text-center mb-2">
+                    <p class="text-capitalize fw-bold ">Delete</p>
+                </div>
+                <hr>
+
+                <!-- table data -->
+
+                <!-- <div class="col-3 text-center">
                     <p>1</p>
                 </div>
                 <div class="col-3 text-center">
-                    <p class="text-capitalize fw-bold ">Website Name</p>
                     <p>Mai</p>
                 </div>
                 <div class="col-3 text-center">
-                    <p class="text-capitalize fw-bold ">Visit</p>
-                    <button class="bg-warning border-0 py-2 px-3 text-white rounded-2"><i class="fa-solid fa-eye"></i> Visit</button>
+                    <a href="https://github.com/Maihetemy/BookMark" target="_blank">
+                        <button class="bg-warning border-0 py-2 px-3 text-white rounded-2"><i class="fa-solid fa-eye"></i>
+                            Visit</button>
+                    </a>
                 </div>
                 <div class="col-3 text-center">
-                    <p class="text-capitalize fw-bold ">Delete</p>
-                    <button class="bg-danger border-0 py-2 px-3 text-white rounded-2"><i class="fa-solid fa-trash-can"></i>
+                    <button class="bg-danger border-0 py-2 px-3 text-white rounded-2"><i
+                            class="fa-solid fa-trash-can"></i>
                         Delete</button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
