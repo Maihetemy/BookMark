@@ -14,17 +14,36 @@ if (localStorage.getItem('sites')) {
 
 // add function
 function addSite() {
-    var siteObj = {
-        siteId: Date.now(),
-        siteName: siteNameInput.value,
-        siteURL: siteURLInput.value,
+    if (validation(siteNameInput) && validation(siteURLInput)) {
+        var siteObj = {
+            siteId: Date.now(),
+            siteName: siteNameInput.value,
+            siteURL: siteURLInput.value,
+        }
+        console.log(siteObj.siteURL);
+        sitesList.push(siteObj);
+        localStorage.setItem('sites', JSON.stringify(sitesList));
+        displaySites(sitesList);
+        clearSite();
     }
-    console.log(siteObj.siteURL);
-    
-    sitesList.push(siteObj);
-    localStorage.setItem('sites', JSON.stringify(sitesList));
-    displaySites(sitesList);
-    clearSite();
+
+    else if (validation(siteNameInput) === false && validation(siteURLInput)) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "The site name is incorrect!",
+            footer: "The site name must be at least 3 characters long, and the first character must be uppercase."
+        });
+    }
+
+    else if (validation(siteNameInput) && validation(siteURLInput) === false) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "The site URL is incorrect!",
+            footer: "Please provide a valid site URL."
+        });
+    }
 }
 
 // clear function
@@ -70,3 +89,26 @@ function deleteSite(id) {
 
     displaySites(sitesList);
 }
+
+// validation
+function validation(site) {
+
+    var regex = {
+        siteNameInput: /^[A-Z][a-z]{2,9}$/,
+        siteURLInput: /(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?\/[a-zA-Z0-9]{2,}|((https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z]{2,}(\.[a-zA-Z]{2,})(\.[a-zA-Z]{2,})?)|(https:\/\/www\.|http:\/\/www\.|https:\/\/|http:\/\/)?[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}\.[a-zA-Z0-9]{2,}(\.[a-zA-Z0-9]{2,})?/g,
+    }
+    if (regex[site.id].test(site.value)) {
+        site.nextElementSibling.classList.replace('d-block', 'd-none');
+        site.classList.add('is-valid');
+        site.classList.remove('is-invalid');
+        return true;
+    }
+    else {
+        site.nextElementSibling.classList.replace('d-none', 'd-block');
+        site.classList.add('is-invalid');
+        site.classList.remove('is-valid');
+        return false;
+    }
+}
+
+

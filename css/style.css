@@ -60,12 +60,12 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
+/* 
 .form-control:focus {
     border-color: rgb(254, 194, 96) !important;
     box-shadow: 2px 2px 8px rgba(254, 194, 96, 0.6) !important;
 
-}
+} */
 
 .submit-btn{
     background-color: #CC4D2A !important;
